@@ -4,4 +4,4 @@ Supplementary files for the paper "Metaheuristic-based tri-directional material 
 
 Optimization convergence data
 
-The best candidate solutions at convergence are export to .vts files for visualization in Paraview
+The best candidate solutions at convergence are exported to .vts files for visualization in Paraview

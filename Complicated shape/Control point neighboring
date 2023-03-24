@@ -1,0 +1,261 @@
+function [I_neighbor, J_neighbor] = neighbors_data_ComplicatedShape(i_sel, j_sel)
+% input: i_sel, j_sel are (i,j) indices in a 2D array representing the control points in a 2D layer of the design mesh
+% output: the neighbor(s) of the considered point.
+switch j_sel
+    case 1
+        switch i_sel
+            case 1 %neighbors: 2 11 12
+                I_neighbor = [2 1 2]; J_neighbor = [1 2 2];
+            case 2 %neighbors: 1 11 12
+                I_neighbor = [1 1 2]; J_neighbor = [1 2 2];
+            case 3 %neighbors: 13 32
+                I_neighbor = [3 2]; J_neighbor = [2 4];
+            case 4 %neighbors: 14
+                I_neighbor = 4; J_neighbor = 2;
+            case 5 %neighbors: 15 34 44
+                I_neighbor = [5 4 4]; J_neighbor = [2 4 5];
+            case 6 %neighbors: 16 25 35 45
+                I_neighbor = [6 5 5 5]; J_neighbor = [2 3 4 5];
+            case 7 %neighbors: 17
+                I_neighbor = 7; J_neighbor = 2;
+            case 8 %neighbors: 18 39 49 59
+                I_neighbor = [8 9 9 9]; J_neighbor = [2 4 5 6];
+            case 9 %neighbors: 10 20 19
+                I_neighbor = [10 10 9]; J_neighbor = [1 2 2];
+            case 10 %neighbors: 9 20
+                I_neighbor = [9 10]; J_neighbor = [1 2];
+        end
+    case 2
+        switch i_sel
+            case 1 %neighbors: 1 2 12 21
+                I_neighbor = [1 2 2 1]; J_neighbor = [1 1 2 3];
+            case 2 %neighbors: 1 2 11 22
+                I_neighbor = [1 2 1 2]; J_neighbor = [1 1 2 3];
+            case 3 %neighbors: 3 23 32 42
+                I_neighbor = [3 3 2 2]; J_neighbor = [1 3 4 5];
+            case 4 %neighbors: 4 24
+                I_neighbor = [4 4]; J_neighbor = [1 3];
+            case 5 %neighbors: 5 25 44 54
+                I_neighbor = [5 5 4 4]; J_neighbor = [1 3 5 6];
+            case 6 %neighbors: 6 26 35 45
+                I_neighbor = [6 6 5 5]; J_neighbor = [1 3 4 5];
+            case 7 %neighbors: 7 27
+                I_neighbor = [7 7]; J_neighbor = [1 3];
+            case 8 %neighbors: 8 28 59
+                I_neighbor = [8 8 9]; J_neighbor = [1 3 6];
+            case 9 %neighbors: 9 29 
+                I_neighbor = [9 9]; J_neighbor = [1 3];
+            case 10 %neighbors: 9 10 30
+                I_neighbor = [9 10 10]; J_neighbor = [1 1 3];
+        end
+    case 3
+        switch i_sel
+            case 1 %neighbors: 11
+                I_neighbor = 1; J_neighbor = 2;
+            case 2 %neighbors: 12 32
+                I_neighbor = [2 2]; J_neighbor = [2 4];
+            case 3 %neighbors: 13 33 42
+                I_neighbor = [3 3 2]; J_neighbor = [2 4 5];
+            case 4 %neighbors: 14 34
+                I_neighbor = [4 4]; J_neighbor = [2 4];
+            case 5 %neighbors: 15 35 6 44 54
+                I_neighbor = [5 5 6 4 4]; J_neighbor = [2 4 1 5 6];
+            case 6 %neighbors: 16 36 45
+                I_neighbor = [6 6 5]; J_neighbor = [2 4 5];
+            case 7 %neighbors: 17 37
+                I_neighbor = [7 7]; J_neighbor = [2 4];
+            case 8 %neighbors: 18 38 59
+                I_neighbor = [8 8 9]; J_neighbor = [2 4 6];
+            case 9 %neighbors: 19 39
+                I_neighbor = [9 9]; J_neighbor = [2 4];
+            case 10 %neighbors: 20
+                I_neighbor = 10; J_neighbor = 2;
+        end
+    case 4
+        switch i_sel
+            case 1 %neighbors: 41
+                I_neighbor = 1; J_neighbor = 5;
+            case 2 %neighbors: 22 3 13
+                I_neighbor = [2 3 3]; J_neighbor = [3 1 2];
+            case 3 %neighbors: 23 42 52 43
+                I_neighbor = [3 2 2 3]; J_neighbor = [3 5 6 5];
+            case 4 %neighbors: 24 44 5
+                I_neighbor = [4 4 5]; J_neighbor = [3 5 1];
+            case 5 %neighbors: 25 45 54 6 16
+                I_neighbor = [5 5 4 6 6]; J_neighbor = [3 5 6 1 2];
+            case 6 %neighbors: 26 46
+                I_neighbor = [6 6]; J_neighbor = [3 5];
+            case 7 %neighbors: 27 47
+                I_neighbor = [7 7]; J_neighbor = [3 5];
+            case 8 %neighbors: 28 48
+                I_neighbor = [8 8]; J_neighbor = [3 5];
+            case 9 %neighbors: 29 49
+                I_neighbor = [9 9]; J_neighbor = [3 5];
+            case 10 %neighbors: 50
+                I_neighbor = 10; J_neighbor = 5;
+        end
+    case 5
+        switch i_sel
+            case 1 %neighbors: 31 51
+                I_neighbor = [1 1]; J_neighbor = [4 6];
+            case 2 %neighbors: 13 23 33
+                I_neighbor = [3 3 3]; J_neighbor = [2 3 4];
+            case 3 %neighbors: 33 52 53
+                I_neighbor = [3 2 3]; J_neighbor = [4 6 6];
+            case 4 %neighbors: 34 54 5 15 25
+                I_neighbor = [4 4 5 5 5]; J_neighbor = [4 6 1 2 3];
+            case 5 %neighbors: 35 55 6 16 26 64
+                I_neighbor = [5 5 6 6 6 4]; J_neighbor = [4 6 1 2 3 7];
+            case 6 %neighbors: 36 56
+                I_neighbor = [6 6]; J_neighbor = [4 6];
+            case 7 %neighbors: 37 57
+                I_neighbor = [7 7]; J_neighbor = [4 6];
+            case 8 %neighbors: 38 58
+                I_neighbor = [8 8]; J_neighbor = [4 6];
+            case 9 %neighbors: 8 39 59
+                I_neighbor = [8 9 9]; J_neighbor = [1 4 6];
+            case 10 %neighbors: 40 60
+                I_neighbor = [10 10]; J_neighbor = [4 6];
+        end
+    case 6
+        switch i_sel
+            case 1 %neighbors: 41
+                I_neighbor = 1; J_neighbor = 5;
+            case 2 %neighbors: 33 43
+                I_neighbor = [3 3]; J_neighbor = [4 5];
+            case 3 %neighbors: 43
+                I_neighbor = 3; J_neighbor = 5;
+            case 4 %neighbors: 44 15 25 35
+                I_neighbor = [4 5 5 5]; J_neighbor = [5 2 3 4];
+            case 5 %neighbors: 45 64
+                I_neighbor = [5 4]; J_neighbor = [5 7];
+            case 6 %neighbors: 46 66
+                I_neighbor = [6 6]; J_neighbor = [5 7];
+            case 7 %neighbors: 47 67
+                I_neighbor = [7 7]; J_neighbor = [5 7];
+            case 8 %neighbors: 48 68
+                I_neighbor = [8 8]; J_neighbor = [5 7];
+            case 9 %neighbors: 49 8 18 28
+                I_neighbor = [9 8 8 8]; J_neighbor = [5 1 2 3];
+            case 10 %neighbors: 50
+                I_neighbor = 10; J_neighbor = 5;
+        end
+    case 7
+        switch i_sel
+            case 1 %neighbors: 71
+                I_neighbor = 1; J_neighbor = 8;
+            case 2 %neighbors: 72
+                I_neighbor = 2; J_neighbor = 8;
+            case 3 %neighbors: 73
+                I_neighbor = 3; J_neighbor = 8;
+            case 4 %neighbors: 74 45 55
+                I_neighbor = [4 5 5]; J_neighbor = [8 5 6];
+            case 5 %neighbors: 75
+                I_neighbor = 5; J_neighbor = 8;
+            case 6 %neighbors: 56 76
+                I_neighbor = [6 6]; J_neighbor = [6 8];
+            case 7 %neighbors: 57 77
+                I_neighbor = [7 7]; J_neighbor = [6 8];
+            case 8 %neighbors: 58 78
+                I_neighbor = [8 8]; J_neighbor = [6 8];
+            case 9 %neighbors: 79
+                I_neighbor = 9; J_neighbor = 8;
+            case 10 %neighbors: 80
+                I_neighbor = 10; J_neighbor = 8;
+        end
+    case 8
+        switch i_sel
+            case 1 %neighbors: 61
+                I_neighbor = 1; J_neighbor = 7;
+            case 2 %neighbors: 62
+                I_neighbor = 2; J_neighbor = 7;
+            case 3 %neighbors: 63
+                I_neighbor = 3; J_neighbor = 7;
+            case 4 %neighbors: 64
+                I_neighbor = 4; J_neighbor = 7;
+            case 5 %neighbors: 65 85 84
+                I_neighbor = [5 5 4]; J_neighbor = [7 9 9];
+            case 6 %neighbors: 66 86
+                I_neighbor = [6 6]; J_neighbor = [7 9];
+            case 7 %neighbors: 67 87
+                I_neighbor = [7 7]; J_neighbor = [7 9];
+            case 8 %neighbors: 68 88
+                I_neighbor = [8 8]; J_neighbor = [7 9];
+            case 9 %neighbors: 69 89
+                I_neighbor = [9 9]; J_neighbor = [7 9];
+            case 10 %neighbors: 70 90
+                I_neighbor = [10 10]; J_neighbor = [7 9];
+        end
+    case 9
+        switch i_sel
+            case 1 %neighbors: 82 91
+                I_neighbor = [2 1]; J_neighbor = [9 10];
+            case 2 %neighbors: 81 92
+                I_neighbor = [1 2]; J_neighbor = [9 10];
+            case 3 %neighbors: 93
+                I_neighbor = 3; J_neighbor = 10;
+            case 4 %neighbors: 94 75
+                I_neighbor = [4 5]; J_neighbor = [10 8];
+            case 5 %neighbors: 75 95 94
+                I_neighbor = [5 5 4]; J_neighbor = [8 10 10];
+            case 6 %neighbors: 76 96
+                I_neighbor = [6 6]; J_neighbor = [8 10];
+            case 7 %neighbors: 77 97
+                I_neighbor = [7 7]; J_neighbor = [8 10];
+            case 8 %neighbors: 78 98
+                I_neighbor = [8 8]; J_neighbor = [8 10];
+            case 9 %neighbors: 79 90 99 100
+                I_neighbor = [9 10 9 10]; J_neighbor = [8 9 10 10];
+            case 10 %neighbors: 80 89 99 100
+                I_neighbor = [10 9 9 10]; J_neighbor = [8 9 10 10];
+        end
+    case 10
+        switch i_sel
+            case 1 %neighbors: 81 92
+                I_neighbor = [1 2]; J_neighbor = [9 10];
+            case 2 %neighbors: 91 82
+                I_neighbor = [1 2]; J_neighbor = [9 10];
+            case 3 %neighbors: 83 103
+                I_neighbor = [3 3]; J_neighbor = [9 11];
+            case 4 %neighbors: 84 85 104
+                I_neighbor = [4 5 4]; J_neighbor = [9 9 11];
+            case 5 %neighbors: 85 105
+                I_neighbor = [5 5]; J_neighbor = [9 11];
+            case 6 %neighbors: 86 106
+                I_neighbor = [6 6]; J_neighbor = [9 11];
+            case 7 %neighbors: 87 107
+                I_neighbor = [7 7]; J_neighbor = [9 11];
+            case 8 %neighbors: 88 108
+                I_neighbor = [8 8]; J_neighbor = [9 11];
+            case 9 %neighbors: 89 90 100 109 110
+                I_neighbor = [9 10 10 9 10]; J_neighbor = [9 9 10 11 11];
+            case 10 %neighbors: 89 90 99 110
+                I_neighbor = [9 10 9 10]; J_neighbor = [9 9 10 11];
+        end
+    case 11
+        switch i_sel
+            case 1 %neighbors: 102
+                I_neighbor = 2; J_neighbor = 11;
+            case 2 %neighbors: 101
+                I_neighbor = 1; J_neighbor = 11;
+            case 3 %neighbors: 93
+                I_neighbor = 3; J_neighbor = 10;
+            case 4 %neighbors: 94 105
+                I_neighbor = [4 5]; J_neighbor = [10 11];
+            case 5 %neighbors: 95 104
+                I_neighbor = [5 4]; J_neighbor = [10 11];
+            case 6 %neighbors: 96
+                I_neighbor = 6; J_neighbor = 10;
+            case 7 %neighbors: 97
+                I_neighbor = 7; J_neighbor = 10;
+            case 8 %neighbors: 98
+                I_neighbor = 8; J_neighbor = 10;
+            case 9 %neighbors: 99 110
+                I_neighbor = [9 10]; J_neighbor = [10 11];
+            case 10 %neighbors: 109 100
+                I_neighbor = [9 10]; J_neighbor = [11 10];
+        end
+end
+
+
+end
